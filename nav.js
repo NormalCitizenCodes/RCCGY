@@ -8,9 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
             <a href="index.html" class="nav-logo">RC CGY</a>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="About.html" class="nav-link">About</a>
-                <a href="Schedule.html" class="nav-link">Schedule</a>
-                <a href="Community.html" class="nav-link">Community</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="schedule.html" class="nav-link">Schedule</a>
+                <a href="community.html" class="nav-link">Community</a>
+                <a href="partners.html" class="nav-link">Partners</a>
+                <a href="admin.html" class="nav-link">Admin</a>
             </div>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>

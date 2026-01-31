@@ -146,6 +146,7 @@ header p {
 /* Call to Action Section */
 .cta-section {
     margin-top: 3vh;
+    margin-bottom: 60px;
     text-align: center;
 }
 
@@ -404,6 +405,8 @@ body.calendar-theme {
     width: 95%;
     max-width: 1300px;
     height: 90vh; /* Takes up 90% of screen height */
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Spreads header, grid, and footer evenly */
@@ -413,6 +416,7 @@ body.calendar-theme {
 /* Compact Header */
 .calendar-intro {
     margin-bottom: 1vh;
+    padding-top: 90px; /* Space below navbar so mini-logo is fully visible */
 }
 
 .mini-logo {
@@ -510,6 +514,7 @@ body.calendar-theme {
 /* Footer Button */
 .calendar-footer {
     margin-top: 1vh;
+    margin-bottom: 60px;
 }
 
 .btn-home {
@@ -536,25 +541,48 @@ body.calendar-theme {
         overflow-y: auto; 
         height: auto; 
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px 16px;
+        box-sizing: border-box;
     }
     .calendar-theme {
         height: auto;
         min-height: 100vh;
-        align-items: flex-start;
-        padding: 20px 0;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 20px 16px;
+        box-sizing: border-box;
     }
     .calendar-container { 
+        width: 100%;
+        max-width: 500px;
         height: auto; 
         padding: 20px 0; 
         min-height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
     }
     .schedule-grid { 
         grid-template-columns: 1fr; 
         height: auto; 
         gap: 20px;
+        width: 100%;
     }
     .day-card { 
-        min-height: 200px; 
+        min-height: 200px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .calendar-intro,
+    .calendar-footer {
+        width: 100%;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -591,10 +619,23 @@ body.calendar-theme {
 }
 
 .gallery-header h1 {
+    font-family: var(--font-heading);
     font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
     text-transform: uppercase;
-    color: #FF7F00;
+    color: var(--accent);
     margin: 10px 0;
+    letter-spacing: 0.02em;
+}
+
+.gallery-header p {
+    color: var(--text-secondary);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    margin: 8px 0 0;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* 3x4 Grid System */
@@ -635,24 +676,14 @@ body.calendar-theme {
     transform: scale(1.05);
 }
 
-/* Partnership Section Styling */
-.partnership-box {
-    background: rgba(255, 127, 0, 0.05);
-    border: 1px dashed #FF7F00;
-    padding: 40px;
-    border-radius: 25px;
-    margin-bottom: 50px;
-}
 
-.partner-logos {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-    font-weight: bold;
-    color: #FF7F00;
+/* Optional: Mobile Responsive Fix */
+@media (max-width: 768px) {
+    .partner-logos {
+        /* On phones, 6 columns is too small; this switches to 2 columns */
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
-
 /* --- FIXED BACK BUTTON (PILL STYLE) --- */
 .gallery-footer {
     margin-top: 40px;
@@ -740,6 +771,8 @@ body.calendar-theme {
     border-bottom: 1px solid rgba(255, 127, 0, 0.2);
     z-index: 1000;
     padding: 15px 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: #fff;
 }
 
 .nav-container {
@@ -1122,3 +1155,162 @@ body.gallery-theme {
 body.viewport-page {
     padding-top: 70px;
 }
+
+/**** Partners page */
+.sponsor-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+
+.sponsor-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.sponsor-header .tag {
+    display: inline-block;
+    color: #000000;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.sponsor-header h1 {
+    color: #fff;
+    font-size: 2.2rem;
+    letter-spacing: 6px;
+    margin-bottom: 12px;
+}
+
+.sponsor-intro {
+    color: #aaa;
+    font-size: 1rem;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.sponsor-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.sponsor-row .photo-card {
+    margin-bottom: 0;
+}
+
+.sponsor-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*admin*/
+.admin-page {
+    background-color: #0d0d0d;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding: 60px 0;
+}
+
+.pyramid-wrapper {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title {
+    color: #FF7F00;
+    letter-spacing: 8px;
+    margin-bottom: 12px;
+}
+
+.admin-intro {
+    color: #aaa;
+    font-size: 1rem;
+    margin-bottom: 60px;
+}
+
+/* Row Containers */
+.pyramid-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 70px; /* Space between ranks */
+}
+
+/* Tier-Specific Widths to create the Pyramid shape */
+.row-founder {
+    max-width: 300px;
+    margin: 0 auto 70px;
+}
+
+.row-admins {
+    max-width: 1200px; /* Wider for 15 people */
+    margin: 0 auto 70px;
+}
+
+.row-pacers {
+    max-width: 1400px; /* Widest base for 10 people */
+    margin: 0 auto;
+}
+
+/* Card & Photo Styling */
+.admin-card {
+    flex: 0 1 auto;
+    text-align: center;
+}
+
+.photo-box {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #FF7F00;
+    margin: 0 auto 12px;
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Sizing Hierarchy */
+.founder-box {
+    width: 160px;
+    height: 160px;
+    border-width: 4px;
+    box-shadow: 0 0 25px rgba(255, 127, 0, 0.5);
+}
+
+.admin-box {
+    width: 100px;
+    height: 100px;
+}
+
+.pacer-box {
+    width: 80px;
+    height: 80px;
+    border-style: dashed;
+}
+
+/* Text */
+.admin-card h3 {
+    color: #FF7F00;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.admin-card p {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+
+
